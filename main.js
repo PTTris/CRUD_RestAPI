@@ -86,8 +86,8 @@ function handleDeleteCourse(id) {
 }
 
 function handleUpdateCourse(id) {
-    let name = document.querySelector("input[name='name']").value = document.querySelector(".title-" + id).textContent;;
-    let description = document.querySelector("input[name='description']").value = document.querySelector(".des-" + id).textContent;;
+    let name = document.querySelector("input[name='name']").value = document.querySelector(".title-" + id).textContent;
+    let description = document.querySelector("input[name='description']").value = document.querySelector(".des-" + id).textContent;
     
     let formCourse = {
         name: name,
@@ -125,7 +125,7 @@ function handleUpdateCourse(id) {
             .then(function(courses) {
                 document.querySelector(".title-" + id).textContent = courses.name;
                 document.querySelector(".des-" + id).textContent = courses.description;
-                
+
                 clearInput();
                 
                 btnCreate.style.display = 'inline-block';
