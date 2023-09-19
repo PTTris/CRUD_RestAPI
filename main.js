@@ -85,7 +85,6 @@ function handleDeleteCourse(id) {
         });
 }
 
-
 function handleUpdateCourse(id) {
     let name = document.querySelector("input[name='name']").value = document.querySelector(".title-" + id).textContent;;
     let description = document.querySelector("input[name='description']").value = document.querySelector(".des-" + id).textContent;;
@@ -110,11 +109,11 @@ function handleUpdateCourse(id) {
             name : formCourse.name = document.querySelector("input[name='name']").value,
             description: formCourse.description = document.querySelector("input[name='description']").value
         }
+
         let options = {
-            method: "PUT", // *GET, POST, PUT, DELETE, etc.
+            method: "PUT",
             headers: {
             "Content-Type": "application/json",
-            // 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify(formCourse)
         }
@@ -126,6 +125,7 @@ function handleUpdateCourse(id) {
             .then(function(courses) {
                 document.querySelector(".title-" + id).textContent = courses.name;
                 document.querySelector(".des-" + id).textContent = courses.description;
+                
                 clearInput();
                 
                 btnCreate.style.display = 'inline-block';
@@ -133,12 +133,7 @@ function handleUpdateCourse(id) {
 
                 btnSave.remove();
             });
-
     })
-}
-
-function createSaveBtn(id,oldData) {
-    
 }
 
 function clearInput() {
@@ -156,9 +151,7 @@ function start() {
     // getCourseAPI(function(courses) {
     //     renderCourses(courses);
     //  });
-
     handleCreateForm();
-    clearInput();
 }
 
 start();
