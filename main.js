@@ -86,13 +86,8 @@ function handleDeleteCourse(id) {
 }
 
 function handleUpdateCourse(id) {
-    let name = document.querySelector("input[name='name']").value = document.querySelector(".title-" + id).textContent;
-    let description = document.querySelector("input[name='description']").value = document.querySelector(".des-" + id).textContent;
-    
-    let formCourse = {
-        name: name,
-        description: description
-    }
+    document.querySelector("input[name='name']").value = document.querySelector(".title-" + id).textContent;
+    document.querySelector("input[name='description']").value = document.querySelector(".des-" + id).textContent;
 
     let btnCreate = document.querySelector("#create");
     let btnClear = document.querySelector("#clear");
@@ -105,9 +100,9 @@ function handleUpdateCourse(id) {
     document.querySelector("#list-btn").appendChild(btnSave);
 
     btnSave.addEventListener('click',function() {
-        formCourse = {
-            name : formCourse.name = document.querySelector("input[name='name']").value,
-            description: formCourse.description = document.querySelector("input[name='description']").value
+        let formCourse = {
+            name : document.querySelector("input[name='name']").value,
+            description: document.querySelector("input[name='description']").value
         }
 
         let options = {
